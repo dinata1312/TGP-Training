@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS Reset -->
+    <style>
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+    </style>
+    <!-- CSS Custom -->
+    <style>
+        body{
+            background-color: gray;
+        }
+        nav {
+            background-color: lightgray;
+            width: 100%;
+        }
+        nav section{
+            display: flex;
+            justify-content: space-between;
+            padding:10px 5px;
+        }
+        #leftNav{
+            flex: 1;
+            align-self: center;
+        }
+        #centerNav{
+            flex: 3;
+            /* align-self: center; */
+        }
+        #rightNav{
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row;
+            gap:5px;
+        }
+        #rightNav a{
+            text-decoration: none;
+        }
+        #rightNav button{
+            padding: 5px 5px;
+            background: transparent;
+            border:1px solid black;
+            border-radius: 5%;
+        }
+        #rightNav button:hover{
+            padding: 5px 5px;
+            background: black;
+            color: white;
+            border:1px solid black;
+            border-radius: 5%;
+        }
+
+        main {
+            width: 100%;
+            background-color: lightblue;
+            height: 90vh;
+            /* height: 800px; */
+        }
+
+        #bioSection {
+            width: 1000px;
+            margin: 0 auto;
+            height: 50%;
+            background-color: white;
+        }
+
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+        }
+        .flex-1 {
+            flex: 1;
+        }
+        .flex-2 {
+            flex: 2;
+        }
+        .flex-3 {
+            flex: 3;
+        }
+        .flex-4 {
+            flex: 4;
+        }
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+        }
+        .gap-20 {
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <section>
+            <div id="leftNav">Logo</div>
+            <div id="rightNav">
+                <a href="#"><button>HOME</button></a>
+                <a href="#"><button>PRODUCT</button></a>
+                <a href="#"><button>GALLERY</button></a>
+                <a href="#"><button>BLOG</button></a>
+                <a href="#"><button>MY INVENTORY</button></a>
+            </div>
+        </section>
+    </nav>
+    <main>
+        <!-- Section Biodata -->
+        <section id="bioSection">
+            <div class="flex-row">
+                <section id="bioFoto" class="flex-1">Foto</section>
+                <section id="bioData" class="flex-3 flex-column gap-20">
+                <h1>Christian Ardinata</h1>
+                <p>RPA Developer</p>
+                <div>
+                    <button>Kontak</button>
+                    <button>Resume</button>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- section Form -->
+        
+        <section id="formSection">
+            <form>
+                <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input type="text" id="nama" name="nama" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <input type="text" id="role" name="role" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="availability">Availability</label>
+                    <input type="text" id="availability" name="availability" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lokasi">Lokasi</label>
+                    <input type="text" id="lokasi" name="lokasi" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="years">Years Experience</label>
+                    <input type="number" id="years" name="years" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <button type="submit" class="submit-button">SUBMIT</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
