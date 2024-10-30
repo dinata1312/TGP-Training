@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Simpanan Anggota Koperasi</title>
+  </head>
+  <body>
+    <h1>Koperasi</h1>
+
+    <!-- Tabel untuk menampilkan daftar anggota -->
+    <table>
+      <thead>
+        <tr>
+          <th>Nama Anggota</th>
+          <th>Simpanan (Rp)</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="listAnggota">
+        <!-- Daftar anggota akan ditampilkan di sini -->
+      </tbody>
+    </table>
+    <br>
+    <!-- Menampilkan total simpanan seluruh anggota -->
+    <div id="totalSimpanan">Total Simpanan Seluruh Anggota: Rp0</div>
+
+    <!-- Form untuk menambah anggota baru -->
+    <form id="formTambahAnggota">
+      <h3>Tambah Anggota Baru</h3>
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" required>
+      <label for="simpanan">Simpanan:</label>
+      <input type="number" id="simpanan" required>
+      <button type="submit">Tambah Anggota</button>
+    </form>
+
+    <script>
+      let totalSimpananSemuaAnggota = 0;
+      let listAnggota = [
+        { nama: 'Budi', simpanan: 50000 },
+        { nama: 'Ani', simpanan: 60000 }
+      ];
+
+      // Fungsi untuk memperbarui total simpanan semua anggota di tampilan
+      function updateTotalSimpanan() {
+        totalSimpananSemuaAnggota = listAnggota.reduce((total, anggota) => total + anggota.simpanan, 0);
+        document.getElementById("totalSimpanan").innerText = "Total Simpanan Seluruh Anggota: Rp" + totalSimpananSemuaAnggota;
+      }
+
+      // Fungsi untuk menampilkan daftar anggota dalam tabel
+      function displayAnggota() {
+        const listAnggotaTable = document.getElementById("listAnggota");
+        listAnggotaTable.innerHTML = ''; // Clear existing rows
+
+        listAnggota.forEach((anggota, index) => {
+          const row = document.createElement("tr");
+
+          // Nama anggota
+          const namaCell = document.createElement("td");
+          namaCell.innerText = anggota.nama;
+          row.appendChild(namaCell);
+
+          // Simpanan anggota
+          const simpananCell = document.createElement("td");
+          const simpananInput = document.createElement("input");
+          simpananInput.type = "number";
+          simpananInput.value = anggota.simpanan;
+          simpananInput.oninput = () => {
+            anggota.simpanan = parseInt(simpananInput.value) || 0;
+            updateTotalSimpanan();
+          };
+          simpananCell.appendChild(simpananInput);
+          row.appendChild(simpananCell);
+
+          // Tombol hapus
+          const aksiCell = document.createElement("td");
+          const hapusButton = document.createElement("button");
+          hapusButton.innerText = "Hapus";
+          hapusButton.onclick = () => {
+            listAnggota.splice(index, 1);
+            displayAnggota();
+            updateTotalSimpanan();
+          };
+          aksiCell.appendChild(hapusButton);
+          row.appendChild(aksiCell);
+
+          listAnggotaTable.appendChild(row);
+        });
+      }
+
+      // Fungsi untuk menambah anggota koperasi dari form
+      document.getElementById("formTambahAnggota").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const nama = document.getElementById("nama").value;
+        const simpanan = parseInt(document.getElementById("simpanan").value) || 0;
+
+        listAnggota.push({ nama, simpanan });
+        displayAnggota();
+        updateTotalSimpanan();
+
+        // Reset form fields
+        document.getElementById("nama").value = '';
+        document.getElementById("simpanan").value = '';
+      });
+
+      // Tampilkan anggota awal dan total simpanan saat halaman pertama kali dimuat
+      displayAnggota();
+      updateTotalSimpanan();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Simpanan Anggota Koperasi</title>
+  </head>
+  <body>
+    <h1>Koperasi</h1>
+    <div>
+      <!-- Daftar anggota akan ditampilkan di sini -->
+    </div>
+    <div id="totalSimpanan">Total Simpanan Seluruh Anggota: Rp0</div>
+    <form action="" method="post"></form>
+    <button id="tambahAnggota">Tambah Anggota</button>
+
+    <script>
+      let totalSimpananSemuaAnggota = 0;
+      let listAnggota = [
+            {
+                nama: 'Budi',
+                simpanan: 50000,
+            },{
+                nama: 'Ani',
+                simpanan: 60000,
+            }
+        ];
+
+      // Fungsi untuk memperbarui total simpanan semua anggota di tampilan
+      function updatedTotalSimpananSemuaAnggota(totalSimpananSemuaAnggota) {
+        totalSimpananSemuaAnggota = 0;
+        for (let anggota in listAnggota) {
+          totalSimpananSemuaAnggota = totalSimpananSemuaAnggota + simpanan;
+        }
+        return totalSimpananSemuaAnggota;
+      }
+
+      // Fungsi untuk menambah anggota koperasi
+      function viewSemuaAnggota() {
+        
+      }
+
+        // Buat elemen baru untuk anggota
+
+        // Dapatkan elemen listAnggota
+
+        // Tambah simpanan anggota ke total simpanan semua anggota
+        
+      // Fungsi untuk menghapus anggota     
+        
+      // Fungsi memperbarui total simpanan semua anggota
+      
+    </script>
+  </body>
+</html>
