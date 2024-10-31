@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Portfolio</title>    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body style="background-color: lightgray;">
+    <!-- Code anda disini -->
+    <nav class="navbar navbar-expand-lg bg-light pl-3 pr-3">
+      <div class="container container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="text-black nav-link active" aria-current="page" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="text-black nav-link" href="#">PRODUCT</a>
+            </li>
+            <li class="nav-item">
+              <a class="text-black nav-link" href="#">GALLERY</a>
+            </li>
+            <li class="nav-item">
+              <a class="text-black nav-link" href="#">BLOG</a>
+            </li>
+            <li class="nav-item">
+              <a class="text-black nav-link" href="#">MY INVENTORY</a>
+            </li>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container mt-2">
+      <section class="pt-4 pl-2 pr-2 row bg-white rounded">
+          <div class="col-md-auto"></div>
+          <div class="col-md-1 ms-auto">
+            <img src="images\images.png" alt="Profile Picture" class="pl-4 img img-thumbnail img-fluid"/>
+          </div>
+          <div class="col-md-auto">
+            <h3 id="nama">Christian Ardinata</h3>
+            <p id="role">Business Analyst</p>
+
+            <div class="action-buttons">
+              <button class="btn btn-primary" onclick="buttonProfileEditorShowHide()" id="profileButton">Show Profile Editor</button>
+              <button class="btn btn-outline-success">Resume</button>
+            </div>
+          </div>
+          <div class="col-md-auto"></div>
+          <div class="col-md-5 ms-auto">
+            <table class="table table-borderless">
+              <tr>
+                <td class="p-0 m-0">Availability</td>
+                <td class="p-0 m-0" id="availability">Full Time</td>
+              </tr>
+              <tr>
+                <td class="p-0 m-0">Usia</td>
+                <td class="p-0 m-0" id="age">17</td>
+              </tr>
+              <tr>
+                <td class="p-0 m-0">Lokasi</td>
+                <td class="p-0 m-0" id="address">Jakarta, Indonesia</td>
+              </tr>
+              <tr>
+                <td class="p-0 m-0">Pengalaman</td>
+                <td class="p-0 m-0" id="yoe">2 Tahun</td>
+              </tr>
+              <tr>
+                <td class="p-0 m-0">Email</td>
+                <td class="p-0 m-0" id="email">Developer@gmail.com</td>
+              </tr>
+            </table>
+          </div>
+      </section>
+
+      <div id="profileEditor" class="container bg-white mt-3 pl-4 pr-4 rounded" style="display:none">
+        <form id="submitForm" autocomplete="off">
+          <div class="form-group">
+            <label for="namaForm" class="col-form-label">Nama</label>
+            <input type="text" id="namaForm" name="namaForm" class="form-control col-form-label" />
+          </div>
+          <div class="form-group">
+            <label for="roleForm" class="col-form-label">Role</label>
+            <input type="text" id="roleForm" name="roleForm" class="form-control col-form-label" />
+          </div>
+          <div class="form-group">
+            <label for="availabilityForm" class="col-form-label">Availability</label>
+            <input type="text" id="availabilityForm" name="availabilityForm" class="form-control col-form-label" />
+          </div>
+          <div class="form-group">
+            <label for="ageForm" class="col-form-label">Age</label>
+            <input type="text" id="ageForm" name="ageForm" class="form-control" />
+          </div>
+          <div class="form-group">
+              <label for="addressForm" class="col-form-label">Lokasi</label>
+              <textarea id="addressForm" name="addressForm" class="form-control"> </textarea>
+          </div>
+          <div class="form-group">
+              <label for="yoeForm" class="col-form-label">Years Of Experience</label>
+              <input type="text" id="yoeForm" name="yoeForm" class="form-control" />
+          </div>
+          <div class="form-group">
+              <label for="emailForm" class="col-form-label">Email</label>
+              <input type="email" id="emailForm" name="emailForm" class="form-control" />
+          </div>
+
+          <button type="submit" class="btn btn-success mt-3 mb-3 w-100 p-1">UPDATE</button>
+        </form>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

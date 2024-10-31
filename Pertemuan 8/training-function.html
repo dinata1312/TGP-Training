@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .hidden{
+            display:none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="toggleImage()">Toggle</button>
+
+    <img src="images/images.png" alt="images" id="profile-picture">
+    <p>Hi, nama saya <strong id="displayName">...</strong></p>
+    <p>Pendidikan terakhir saya adalah <strong id="displayEducation">...</strong></p>
+    <p>Saya seorang <strong id="displayGender">...</strong></p>
+
+    <form id="submitForm" autocomplete="off">
+        <table border="1">
+            <tr>
+                <td><label for="name">Nama</label></td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td><label for="education">Pendidikan</label></td>
+                <td><select name="education" id="education">
+                    <option value="SD">SD</option>
+                    <option value="SMP">SMP</option>
+                    <option value="SMA">SMA</option>
+                    <option value="SMK">SMK</option>
+                    <option value="S1">S1</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Jenis Kelamin</label></td>
+                <td><input type="radio" name="gender" id="gender" value="Pria"> Pria <input type="radio" name="gender" id="gender" value="Wanita"> Wanita</td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>
