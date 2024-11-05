@@ -33,38 +33,59 @@ function buttonProfileEditorShowHide() {
     }
 }
 
-let submitForm = document.getElementById("submitForm");
-submitForm.addEventListener("submit", function(event) {
-      event.preventDefault();
+// let submitForm = document.getElementById("submitForm");
+// submitForm.addEventListener("submit", function(event) {
+//       event.preventDefault();
 
-      const form = event.target;
-      const data = new FormData(form);
+//       const form = event.target;
+//       const data = new FormData(form);
       
-      let name                                          = document.getElementById("namaForm").value;
-      document.getElementById("nama").innerText         = name;
+//       let name                                          = document.getElementById("namaForm").value;
+//       document.getElementById("nama").innerText         = name;
 
-      let role                                          = document.getElementById("roleForm").value;
-      document.getElementById("role").innerText         = role;
+//       let role                                          = document.getElementById("roleForm").value;
+//       document.getElementById("role").innerText         = role;
 
-      let availability                                  = document.getElementById("availabilityForm").value;
-      document.getElementById("availability").innerText = availability;
+//       let availability                                  = document.getElementById("availabilityForm").value;
+//       document.getElementById("availability").innerText = availability;
 
-      let age                                           = document.getElementById("ageForm").value;
-      document.getElementById("age").innerText          = age;
+//       let age                                           = document.getElementById("ageForm").value;
+//       document.getElementById("age").innerText          = age;
 
-      let address                                       = document.getElementById("addressForm").value;
-      document.getElementById("address").innerText      = address;
+//       let address                                       = document.getElementById("addressForm").value;
+//       document.getElementById("address").innerText      = address;
 
-      let yoe                                           = document.getElementById("yoeForm").value;
-      document.getElementById("yoe").innerText          = yoe;
+//       let yoe                                           = document.getElementById("yoeForm").value;
+//       document.getElementById("yoe").innerText          = yoe;
 
-      let email                                         = document.getElementById("emailForm").value;
-      document.getElementById("email").innerText        = email;
+//       let email                                         = document.getElementById("emailForm").value;
+//       document.getElementById("email").innerText        = email;
       
-      document.getElementById("profileEditor").style.display  = "none";
-      document.getElementById("profileButton").innerText = "Show Profile Editor";
+//       document.getElementById("profileEditor").style.display  = "none";
+//       document.getElementById("profileButton").innerText = "Show Profile Editor";
 
-      for(const [name,value] of data){
-          console.log(name,":", value);
-      }
-  });
+//       for(const [name,value] of data){
+//           console.log(name,":", value);
+//       }
+//   });
+
+document.getElementById("submitForm").addEventListener("submit", (event) => {
+    event.preventDefault(); // Mencegah form melakukan submit secara default
+
+    // Array untuk id input form dan id output yang sesuai
+    const formIds = ["namaForm", "roleForm", "availabilityForm", "ageForm", "addressForm", "yoeForm", "emailForm"];
+    const outputIds = ["nama", "role", "availability", "age", "address", "yoe", "email"];
+
+    // Looping dengan indeks untuk mengupdate output berdasarkan input
+    formIds.forEach((formId, index) => {
+        const outputId = outputIds[index];
+        document.getElementById(outputId).innerText = document.getElementById(formId).value;
+    });
+
+    // Menyembunyikan editor profil dan mengubah teks tombol
+    document.getElementById("profileEditor").style.display = "none";
+    document.getElementById("profileButton").innerText = "Show Profile Editor";
+
+    // Log data form ke console
+    new FormData(event.target).forEach((value, name) => console.log(`${name}: ${value}`));
+});
