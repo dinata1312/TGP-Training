@@ -29,3 +29,4 @@ function filterOddES6(){
     const numbers = [1,60,112,123,100,99,73];
     const oddNumbers = [];
 }
+
